@@ -13,7 +13,7 @@ def main(argv):
     else:
         sys.exit()
 
-    client = socket(AF_INET, SOCK_STREAM)
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     client.connect((TARGET,PORT))
     Lib.writeTextTCP(FILE, client)

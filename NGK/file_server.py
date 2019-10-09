@@ -8,7 +8,7 @@ BUFSIZE = 1000
 
 def main(argv):
 	# TO DO Your Code
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock = socket(AF_INET, SOCK_STREAM)
     sock.bind((HOST,PORT))
     sock.listen(1)
 

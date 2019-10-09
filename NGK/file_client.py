@@ -12,7 +12,7 @@ def main(argv):
     print(sys.argv[1])
     client.connect((sys.argv[1],PORT))
     #client.connect((sys.argv[1:],PORT))
-    receiveFile(sys.argv[2], client)
+    #receiveFile(sys.argv[2], client)
 
 def receiveFile(fileName,  conn):
 	# TO DO Your Code

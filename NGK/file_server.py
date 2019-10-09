@@ -21,10 +21,10 @@ def main(argv):
         wish = Lib.readTextTCP(connected)
         datasize = Lib.check_File_Exists(wish)
         if datasize != 0:
-            sock.send("Sending file")
-            sendFile(wish, datasize, sock)
+            connected.send("Sending file")
+            sendFile(wish, datasize, connected)
         else:
-            sock.send("file does not exist")
+            connected.send("file does not exist")
 
     connected.close()
 

@@ -1,5 +1,5 @@
 import sys
-from socket import *
+import socket
 from lib import Lib
 
 TARGET = '10.0.0.1'

@@ -8,15 +8,16 @@ BUFSIZE = 1000
 
 def main(argv):
 	# TO DO Your Code
-    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #print(sys.argv[1])
-    client.connect((sys.argv[0],PORT))
+    #client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print(argv[1])
+    print(argv[0])
+    #client.connect((sys.argv[0],PORT))
     #client.connect((sys.argv[1:],PORT))
-    Lib.writeTextTCP(sys.argv[1], client)
-    size = Lib.readTextTCP(client)
-    receiveFile(sys.argv[1], client, size)
+    #Lib.writeTextTCP(sys.argv[1], client)
+    #size = Lib.readTextTCP(client)
+    #receiveFile(sys.argv[1], client, size)
 
-    client.close()
+    #client.close()
 def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
     bytesToRead = 0

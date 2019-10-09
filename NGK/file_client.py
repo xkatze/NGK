@@ -14,6 +14,7 @@ def main(argv):
     #client.connect((sys.argv[1:],PORT))
     receiveFile(sys.argv[2], client)
 
+    client.close()
 def receiveFile(fileName,  conn):
 	# TO DO Your Code
     Lib.writeTextTCP(fileName, conn)

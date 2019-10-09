@@ -16,8 +16,8 @@ def main(argv):
 
 def receiveFile(fileName,  conn):
 	# TO DO Your Code
-    lib.writeTextTCP(fileName, conn)
-    lib.readTextTCP(conn)
+    writeTextTCP(fileName, conn)
+    readTextTCP(conn)
 
 if __name__ == "__main__":
    main(sys.argv[1])

@@ -33,7 +33,7 @@ def sendFile(fileName,  fileSize,  conn):
     totalsend = 0
     data = conn.recv(BUFFSIZE)
     while totalsend < fileSize:
-        lib.writeTextTCP(fileName, conn)
+        writeTextTCP(fileName, conn)
         totalsend += data
 
 

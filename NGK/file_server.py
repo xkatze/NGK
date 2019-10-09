@@ -18,7 +18,7 @@ def main(argv):
         connected, addr = sock.accept()
         print("client connected with <" + str(addr) + ">")
 
-        wish = Lib.readTextTCP(sock)
+        wish = Lib.readTextTCP(connected)
         datasize = Lib.check_File_Exists(wish)
         if datasize != 0:
             sock.send("Sending file")
@@ -26,7 +26,7 @@ def main(argv):
         else:
             sock.send("file does not exist")
 
-    sock.close()
+    connected.close()
 
 def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code

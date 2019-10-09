@@ -10,7 +10,7 @@ def main(argv):
 	# TO DO Your Code
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print(sys.argv[1])
-    client.connect((sys.argv[1],PORT))
+    client.connect((TARGET,PORT))
     #client.connect((sys.argv[1:],PORT))
     #receiveFile(sys.argv[2], client)
 

@@ -20,7 +20,6 @@ def main(argv):
 def receiveFile(fileName,  conn):
 	# TO DO Your Code
     file = open(fileName, 'wb')
-    while
     Lib.readTextTCP(conn)
 
 if __name__ == "__main__":

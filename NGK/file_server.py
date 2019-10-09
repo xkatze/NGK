@@ -18,8 +18,8 @@ def main(argv):
         connected, addr = sock.accept()
         print("client connected with <" + str(addr) + ">")
 
-        wish = readTextTCP(sock)
-        datasize = check_File_Exists(wish)
+        wish = Lib.readTextTCP(sock)
+        datasize = Lib.check_File_Exists(wish)
         if datasize != 0:
             sock.send("Sending file")
             sendFile(wish, datasize, sock)
@@ -33,7 +33,7 @@ def sendFile(fileName,  fileSize,  conn):
     totalsend = 0
     data = conn.recv(BUFFSIZE)
     while totalsend < fileSize:
-        writeTextTCP(fileName, conn)
+        Lib.writeTextTCP(fileName, conn)
         totalsend += data
 
 

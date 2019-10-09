@@ -26,7 +26,7 @@ def receiveFile(fileName,  conn, size):
         file.write(data)
         bytesToRead += data
 
-        if bytesToRead == ((int)size):
+        if bytesToRead == (int(size)):
             break
     file.close()
     print("completed transfering file")

@@ -25,15 +25,16 @@ def main(argv):
             sendFile(wish, datasize, connected)
         else:
             connected.send("file does not exist")
-
-    sock.close()
+        connected.close()
 
 def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code
+    Lib.writeTextTCP(str(fileSize),conn)
     totalsend = 0
-    data = conn.recv(BUFFSIZE)
+    file = open(fileName, 'rb')
+    data = file.recv(BUFFSIZE)
     while totalsend < fileSize:
-        Lib.writeTextTCP(fileName, conn)
+        conn.send(data)
         totalsend += data
 
 

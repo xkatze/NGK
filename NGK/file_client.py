@@ -10,14 +10,17 @@ def main(argv):
 	# TO DO Your Code
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     #print(sys.argv[1])
-    client.connect((sys.argv[1],PORT))
+    client.connect((sys.argv[0],PORT))
     #client.connect((sys.argv[1:],PORT))
-    receiveFile(sys.argv[2], client)
+    Lib.writeTextTCP(sys.argv[1])
+    size = Lib.readTextTCP(client)
+    receiveFile(sys.argv[1], client)
 
     client.close()
 def receiveFile(fileName,  conn):
 	# TO DO Your Code
-    Lib.writeTextTCP(fileName, conn)
+    file = open(fileName, 'wb')
+    while
     Lib.readTextTCP(conn)
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ def main(argv):
     size = Lib.readTextTCP(client)
     receiveFile(argv[1], client, size)
 
-    #client.close()
+    client.close()
 def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
     bytesToRead = 0

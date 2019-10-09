@@ -18,13 +18,13 @@ def main(argv):
         connected, addr = sock.accept()
         print("client connected with <" + str(addr) + ">")
 
-        #wish = lib.readTextTCP(sock)
-        #datasize = lib.check_File_Exists(wish)
-        #if datasize != 0:
-        #    sock.send("Sending file")
-        #    sendFile(wish, datasize, sock)
-        #else:
-        #    sock.send("file does not exist")
+        wish = readTextTCP(sock)
+        datasize = check_File_Exists(wish)
+        if datasize != 0:
+            sock.send("Sending file")
+            sendFile(wish, datasize, sock)
+        else:
+            sock.send("file does not exist")
 
     sock.close()
 

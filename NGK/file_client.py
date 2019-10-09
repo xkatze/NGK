@@ -12,7 +12,7 @@ def main(argv):
     #print(sys.argv[1])
     client.connect((sys.argv[1],PORT))
     #client.connect((sys.argv[1:],PORT))
-    Lib.writeTextTCP(sys.argv[2])
+    Lib.writeTextTCP(sys.argv[2], client)
     size = Lib.readTextTCP(client)
     receiveFile(sys.argv[2], client)
 

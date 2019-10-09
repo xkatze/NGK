@@ -20,4 +20,4 @@ def receiveFile(fileName,  conn):
     readTextTCP(conn)
 
 if __name__ == "__main__":
-   main(sys.argv[1])
+   main(sys.argv[1:])

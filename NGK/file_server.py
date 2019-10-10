@@ -19,7 +19,7 @@ def main(argv):
         print("client connected with <" + str(addr) + ">")
 
         wish = Lib.readTextTCP(connected)
-        if wish != "q"
+        if wish != "q":
 
             datasize = Lib.check_File_Exists(wish)
 

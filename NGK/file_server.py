@@ -32,10 +32,10 @@ def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code
     Lib.writeTextTCP(str(fileSize),conn)
     file = open(fileName, 'rb')
-    data = file.recv(BUFFSIZE)
+    data = file.recv(BUFSIZE)
     while data:
         conn.send(data)
-        data = file.read(BUFFSIZE)
+        data = file.read(BUFSIZE)
 
 
 if __name__ == "__main__":

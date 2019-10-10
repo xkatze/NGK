@@ -14,25 +14,30 @@ def main(argv):
         sys.exit()
 
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
     client.connect((TARGET,PORT))
+
     Lib.writeTextTCP(FILE, client)
     size = Lib.readTextTCP(client)
+
     receiveFile(FILE, client, size)
 
     client.close()
+
 def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
     bytesToRead = 0
-    file = open(fileName, 'wb')
+    name = Lib.extractFilename(fileName)
+    file = open(name, 'wb')
     while int(size) > bytesToRead:
-        data = conn.recv(BUFFSIZE)
+        data = conn.recv(BUFSIZE)
         file.write(data)
         bytesToRead += data
 
         if bytesToRead == int(size):
             break
+
     file.close()
     print("completed transfering file")
+
 if __name__ == "__main__":
    main(sys.argv[1:])

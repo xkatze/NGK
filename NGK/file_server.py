@@ -1,5 +1,5 @@
 import sys
-import socket import *
+from socket import *
 from lib import Lib
 
 HOST = '10.0.0.1'

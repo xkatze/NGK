@@ -1,5 +1,5 @@
 import sys
-import socket import *
+from socket import *
 from lib import Lib
 
 PORT = 9000

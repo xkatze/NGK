@@ -39,7 +39,8 @@ def sendFile(fileName,  fileSize,  conn):
     while data:
         conn.send(data)
         data = file.read(BUFSIZE)
-
+        
+    file.close()
 
 if __name__ == "__main__":
    main(sys.argv[1:])

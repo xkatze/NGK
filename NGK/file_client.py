@@ -17,9 +17,8 @@ def main(argv):
     client.connect((TARGET,PORT))
 
     Lib.writeTextTCP(FILE, client)
-    size = Lib.readTextTCP(client)
-
-    receiveFile(FILE, client, size)
+    sizer = Lib.readTextTCP(client)
+    receiveFile(FILE, client, sizer)
 
     client.close()
     sys.exit()

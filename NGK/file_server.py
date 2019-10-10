@@ -24,7 +24,7 @@ def main(argv):
             datasize = Lib.check_File_Exists(wish)
 
             if datasize > 0:
-                connected.send("Sending file")
+                connected.send("Sending file\n")
                 sendFile(wish, datasize, connected)
         else:
             connected.send("file does not exist")

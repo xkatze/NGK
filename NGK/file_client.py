@@ -19,27 +19,27 @@ def main(argv):
     Lib.writeTextTCP(FILE, client)
     sizer = Lib.readTextTCP(client)
 
-    print(sizer)
+
     #receiveFile(FILE, client, sizer)
 
     client.close()
     sys.exit()
 
-#def receiveFile(fileName,  conn, size):
+def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
-    #bytesToRead = 0
-    #name = Lib.extractFilename(fileName)
-    #file = open(name, 'wb')
-    #while(int(size) > bytesToRead):
-        #data = conn.recv(BUFSIZE)
-        #file.write(data)
-        #bytesToRead += data
+    bytesToRead = 0
+    name = Lib.extractFilename(fileName)
+    file = open(name, 'wb')
+    while(int(size) > bytesToRead):
+        data = conn.recv(BUFSIZE)
+        file.write(data)
+        bytesToRead += data
 
-        #if bytesToRead == int(size):
-        #    break
+        if bytesToRead == int(size):
+            break
 
-    #file.close()
-    #print("completed transfering file")
+    file.close()
+    print("completed transfering file")
 
 if __name__ == "__main__":
    main(sys.argv[1:])

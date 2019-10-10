@@ -28,7 +28,7 @@ def receiveFile(fileName,  conn, size):
     bytesToRead = 0
     name = Lib.extractFilename(fileName)
     file = open(name, 'wb')
-    while (int(size) > bytesToRead):
+    while size > bytesToRead):
         data = conn.recv(BUFSIZE)
         file.write(data)
         bytesToRead += data

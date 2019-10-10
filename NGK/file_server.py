@@ -33,7 +33,7 @@ def main(argv):
 
 def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code
-    Lib.writeTextTCP(str(fileSize),conn)
+    Lib.writeTextTCP(fileSize, conn)
     file = open(fileName, "rb")
     data = file.recv(BUFSIZE)
     while data:

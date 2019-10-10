@@ -29,7 +29,7 @@ def main(argv):
 			fileSize = Lib.check_File_Exists(msg)
 
 			if fileSize > 0:
-				
+
 				sendFile(msg, fileSize, conSock)
 
 		print("Connection closed")
@@ -46,6 +46,6 @@ def sendFile(fileName,  fileSize,  conn): # Sendfile funktion med parameterne (f
 		conn.send(data) # sender bytes
 		data = file.read(BUFSIZE)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
    main(sys.argv[1:])
   # Naar funktionen sendFile kaldes bruges (fileName, fileSize, conSock); e.g. sendFile(Hello, 30, conSock)

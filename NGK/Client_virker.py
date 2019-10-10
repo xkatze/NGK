@@ -41,5 +41,5 @@ def receiveFile(nm,  conn, size):
 	file.close()
 	print("Transfer complete\n")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
    main(sys.argv[1:])

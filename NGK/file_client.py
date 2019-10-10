@@ -22,13 +22,14 @@ def main(argv):
     receiveFile(FILE, client, size)
 
     client.close()
+    sys.exit()
 
 def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
     bytesToRead = 0
     name = Lib.extractFilename(fileName)
     file = open(name, 'wb')
-    while int(size) > bytesToRead:
+    while (int(size) > bytesToRead):
         data = conn.recv(BUFSIZE)
         file.write(data)
         bytesToRead += data

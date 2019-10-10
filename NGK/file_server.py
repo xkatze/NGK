@@ -19,10 +19,13 @@ def main(argv):
         print("client connected with <" + str(addr) + ">")
 
         wish = Lib.readTextTCP(connected)
-        datasize = Lib.check_File_Exists(wish)
-        if datasize != 0:
-            connected.send("Sending file")
-            sendFile(wish, datasize, connected)
+        if wish != "q"
+
+            datasize = Lib.check_File_Exists(wish)
+
+            if datasize != 0:
+                connected.send("Sending file")
+                sendFile(wish, datasize, connected)
         else:
             connected.send("file does not exist")
 

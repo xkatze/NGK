@@ -26,7 +26,7 @@ def main(argv):
         else:
             connected.send("file does not exist")
 
-    connected.close()
+        connected.close()
 
 def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code

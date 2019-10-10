@@ -23,7 +23,7 @@ def main(argv):
 
             datasize = Lib.check_File_Exists(wish)
 
-            if datasize != 0:
+            if datasize > 0:
                 connected.send("Sending file")
                 sendFile(wish, datasize, connected)
         else:
@@ -33,7 +33,7 @@ def main(argv):
 
 def sendFile(fileName,  fileSize,  conn):
 	# TO DO Your Code
-    Lib.writeTextTCP(fileSize, conn)
+    Lib.writeTextTCP(str(fileSize), conn)
     file = open(fileName, "rb")
     data = file.recv(BUFSIZE)
     while data:

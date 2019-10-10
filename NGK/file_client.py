@@ -33,7 +33,7 @@ def receiveFile(fileName,  conn, size):
     while(int(size) > bytesToRead):
         data = conn.recv(BUFSIZE)
         file.write(data)
-        bytesToRead += data
+        bytesToRead += len(data)
 
         if bytesToRead == int(size):
             break

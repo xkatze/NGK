@@ -25,7 +25,7 @@ def main(argv):
 
             if datasize > 0:
                 sendFile(wish, datasize, connected)
-                connected.send("Sending file\n")
+
         else:
             connected.send("file does not exist")
 
@@ -39,7 +39,7 @@ def sendFile(fileName,  fileSize,  conn):
     while data:
         conn.send(data)
         data = file.read(BUFSIZE)
-        
+
     file.close()
 
 if __name__ == "__main__":

@@ -20,7 +20,7 @@ def main(argv):
     sizer = Lib.readTextTCP(client)
 
 
-    #receiveFile(FILE, client, sizer)
+    receiveFile(FILE, client, sizer)
 
     client.close()
     sys.exit()

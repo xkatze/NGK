@@ -7,20 +7,20 @@ BUFSIZE = 1000
 
 def main(argv):
 	# TO DO Your Code
-    if len(argv) > 0:
+    if len(argv) > 0: #give arguments in the terminal names
         TARGET = argv[0]
         FILE = argv[1]
     else:
         sys.exit()
 
-    client = socket(AF_INET, SOCK_STREAM)
+    client = socket(AF_INET, SOCK_STREAM)   #making the socket
     client.connect((TARGET,PORT))
 
-    Lib.writeTextTCP(FILE, client)
-    sizer = Lib.readTextTCP(client)
+    Lib.writeTextTCP(FILE, client)  #asking for file
+    sizer = Lib.readTextTCP(client) #receives the filesize from server
 
 
-    receiveFile(FILE, client, sizer)
+    receiveFile(FILE, client, sizer) #receive the file
 
     client.close()
     sys.exit()
@@ -28,14 +28,14 @@ def main(argv):
 def receiveFile(fileName,  conn, size):
 	# TO DO Your Code
     bytesToRead = 0
-    name = Lib.extractFilename(fileName)
-    file = open(name, 'wb')
-    while(int(size) > bytesToRead):
+    name = Lib.extractFilename(fileName) #getting the name of the file
+    file = open(name, 'wb') #using the file name to make a new file
+    while(int(size) > bytesToRead): #building the new file
         data = conn.recv(BUFSIZE)
         file.write(data)
         bytesToRead += len(data)
 
-        if bytesToRead == int(size):
+        if bytesToRead == int(size): # makes sure that the file doesnt get too much data
             break
 
     file.close()

@@ -12,9 +12,12 @@ def main():
     client = socket(AF_INET, SOCK_DGRAM)
     client.bind(host)
 
-    client.sendTo(raw_input("u/l ->""),target)
+    sending = raw_input("u/l ->")
+    client.sendto(sending,target)
 
+    data, addr = client.recvfrom(1000)
 
+    print(data)
 
 if __name__ == "__main__":
    main()
